@@ -1,0 +1,12 @@
+{
+    "name": "UnitTests",
+    "references": [
+        "GOAP"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ]
+}
