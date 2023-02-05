@@ -52,6 +52,7 @@ jobs:
         uses: game-ci/unity-test-runner@v2
         id: testRunner
         with:
+          path: src/GoapSimulation
           testMode: ${{ matrix.testMode }}
           checkName: ${{ matrix.testMode }} test results
           githubToken: ${{ secrets.GITHUB_TOKEN }}
@@ -98,12 +99,13 @@ jobs:
 
       - uses: game-ci/unity-builder@v2
         with:
+          path: src/GoapSimulation
           targetPlatform: WebGL
 
       - uses: actions/upload-artifact@v2
         with:
           name: build-WebGL
-          path: build/WebGL
+          path: src/GoapSimulation/build/WebGL
 
   buildWindows:
     needs: testRunner
@@ -142,12 +144,13 @@ jobs:
 
       - uses: game-ci/unity-builder@v2
         with:
+          path: src/GoapSimulation
           targetPlatform: StandaloneWindows64
 
       - uses: actions/upload-artifact@v2
         with:
           name: build-StandaloneWindows64
-          path: build/StandaloneWindows64
+          path: src/GoapSimulation/build/StandaloneWindows64
 
 
   deployPages:
