@@ -99,7 +99,7 @@ jobs:
 
       - uses: game-ci/unity-builder@v2
         with:
-          path: src/GoapSimulation
+          projectPath: src/GoapSimulation
           targetPlatform: WebGL
 
       - uses: actions/upload-artifact@v2
@@ -144,7 +144,7 @@ jobs:
 
       - uses: game-ci/unity-builder@v2
         with:
-          path: src/GoapSimulation
+          projectPath: src/GoapSimulation
           targetPlatform: StandaloneWindows64
 
       - uses: actions/upload-artifact@v2
