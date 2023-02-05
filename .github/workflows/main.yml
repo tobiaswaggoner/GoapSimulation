@@ -44,7 +44,7 @@ jobs:
       - name: Restore Library cache
         uses: actions/cache@v2
         with:
-          path: Library
+          path: src/GoapSimulation/Library
           key: Library-test-project-${{ matrix.targetPlatform }}
           restore-keys: |
             Library-test-project-
@@ -92,7 +92,7 @@ jobs:
       - name: Restore Library cache
         uses: actions/cache@v2
         with:
-          path: Library
+          path: src/GoapSimulation/Library
           key: Library-build-WebGL
           restore-keys: |
             Library-build-
@@ -106,7 +106,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: build-WebGL
-          path: src/GoapSimulation/build/WebGL
+          path: build/WebGL
 
   buildWindows:
     needs: testRunner
@@ -137,7 +137,7 @@ jobs:
       - name: Restore Library cache
         uses: actions/cache@v2
         with:
-          path: Library
+          path: src/GoapSimulation/Library
           key: Library-build-StandaloneWindows64
           restore-keys: |
             Library-build-
@@ -151,7 +151,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: build-StandaloneWindows64
-          path: src/GoapSimulation/build/StandaloneWindows64
+          path: build/StandaloneWindows64
 
 
   deployPages:
